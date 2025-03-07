@@ -26,6 +26,10 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+ 
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap-icons.css">
+
 
   <!-- =======================================================
   * Template Name: Bootslander
@@ -88,8 +92,11 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Starter Page</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h1>Your Journey Starts Here</h1>
+              <p class="mb-0">
+                Step into a world of endless opportunities. Whether you're signing up for something great or taking the next big step, we’re here to guide you. Ready to make it happen?
+              </p>
+              
             </div>
           </div>
         </div>
@@ -105,19 +112,120 @@
     </div><!-- End Page Title -->
 
     <!-- Starter Section Section -->
-    <section id="starter-section" class="starter-section section">
+    <!-- <section id="starter-section" class="starter-section section">
 
-      <!-- Section Title -->
+      
       <div class="container section-title" data-aos="fade-up">
         <h2>Starter Section</h2>
         <div><span>Check Our</span> <span class="description-title">Starter Section</span></div>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up">
         <p>Use this page as a starter for your own custom pages.</p>
       </div>
 
-    </section><!-- /Starter Section Section -->
+    </section> -->
+
+
+
+
+    <!-- Add this section inside the <main> tag, after the existing sections -->
+      <section id="membership-signup" class="membership-signup section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Membership Registration</h2>
+          <div><span>Join our</span> <span class="description-title">community and unlock exclusive opportunities</span></div>
+        </div><!-- End Section Title -->
+      
+        <div class="container" data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <form action="javascript:void(0);" method="POST" class="php-email-form p-4" id="membershipForm" onsubmit="return redirectToPayment();">
+                <div class="row mb-3">
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your full name" required>
+                  </div>
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" class="form-control" id="age" placeholder="Your age" min="18" required>
+                  </div>
+                </div>
+      
+                <div class="row mb-3">
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="location">Location</label>
+                    <input type="text" name="location" class="form-control" id="location" placeholder="Your city/country" required>
+                  </div>
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" name="occupation" class="form-control" id="occupation" placeholder="Your profession" required>
+                  </div>
+                </div>
+      
+                <div class="row mb-3">
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" class="form-control" id="dob" required>
+                  </div>
+                  <div class="col-md-6 form-group mb-3">
+                    <label for="reason">Reason for Joining</label>
+                    <input type="text" name="reason" class="form-control" id="reason" placeholder="Brief reason for joining" required>
+                  </div>
+                </div>
+      
+                <div class="form-group mb-4">
+                  <label for="membership" class="membership-category-label">Select Membership Category</label>
+                  <div class="membership-selector-container">
+                    <select name="membership" id="membership" class="form-select membership-selector" required>
+                      <option value="" disabled selected>Choose your membership level</option>
+                      <option value="basic">Basic Membership - ₦50,000/year</option>
+                      <option value="premium">Premium Membership - ₦75,000/year</option>
+                      <option value="executive">Executive Membership - ₦150,000/year</option>
+                    </select>
+                    <a href="pricing.html" class="btn btn-sm btn-outline-primary view-pricing-btn">View Pricing Details</a>
+                  </div>
+                </div>
+      
+                <div class="form-group mb-4">
+                  <label class="payment-options-label">Payment Options</label>
+                  <div class="payment-methods-container">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="payment_method" id="bank_transfer" value="bank_transfer" required>
+                      <label class="form-check-label" for="bank_transfer">
+                        <i class="bi bi-bank"></i> Bank Transfer
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="credit_card">
+                      <label class="form-check-label" for="credit_card">
+                        <i class="bi bi-credit-card"></i> Credit Card
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="payment_method" id="paypal" value="paypal">
+                      <label class="form-check-label" for="paypal">
+                        <i class="bi bi-paypal"></i> PayPal
+                      </label>
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Payment Redirection Placeholder -->
+                <div class="payment-redirect">
+                  <!-- TODO: Replace this comment with your specific payment gateway link -->
+                </div>
+      
+                <div class="text-center mt-4">
+                  <div class="text-center mt-4">
+                    <button type="submit" class="btn proceed-btn">Proceed to Payment</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
   </main>
 
@@ -199,15 +307,69 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
 
-</body>
-</html>
+<!-- Payment Redirection Script -->
+<script>
+// Function to handle payment redirection based on membership selection
+function redirectToPayment() {
+  // Get the selected membership option
+  const membershipSelect = document.getElementById('membership');
+  const selectedMembership = membershipSelect.value;
+  
+  // Get the selected payment method
+  const paymentMethod = document.querySelector('input[name="payment_method"]:checked');
+  
+  // Validate form before proceeding
+  if (!selectedMembership) {
+    alert('Please select a membership level');
+    return false;
+  }
+  
+  if (!paymentMethod) {
+    alert('Please select a payment method');
+    return false;
+  }
+  
+  // Define payment links for each membership type
+  const paymentLinks = {
+    'basic': 'https://paystack.com/pay/sbr50',
+    'premium': 'https://paystack.com/pay/sbr75',
+    'executive': 'https://paystack.com/pay/sbr150'
+  };
+  
+  // Get the appropriate payment link
+  const paymentLink = paymentLinks[selectedMembership];
+  
+  // Redirect to payment page if a valid option was selected
+  if (paymentLink) {
+    window.location.href = paymentLink;
+    return false; // Prevent form submission
+  } else {
+    alert('Please select a membership option');
+    return false;
+  }
+}
+
+// Add event listener when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the form element
+  const form = document.querySelector('.php-email-form');
+  
+  // Add event listener to the form for submission
+  if (form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Stop form from submitting normally
+      redirectToPayment();
+    });
+  }
+});
+</script>
